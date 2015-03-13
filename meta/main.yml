@@ -1,0 +1,19 @@
+---
+dependencies:
+  - ansible-ffmpeg-common
+galaxy_info:
+  author: Mihai Parv
+  description: 
+  license: BSD
+  min_ansible_version: 1.4
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+  categories:
+    - system
+  dependencies:
+    - ansible-ffmpeg-common

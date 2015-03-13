@@ -1,0 +1,24 @@
+---
+- name: ensure Serviio dependencies are installed
+  apt: state=present name={{ item }}
+  with_flattened:
+    - serviio_dependencies
+  tags: serviio
+
+- name: ensure the install dir is available
+  file: path={{ serviio_install_dir }}
+        state=directory
+        owner={{ serviio_user }} group={{ serviio_user }} mode=755
+  sudo: yes
+  tags: serviio
+
+- name: download the bundle to the temporary location
+  get_url: url={{ serviio_bundle_url }}
+           dest=/tmp/{{ serviio_bundle_url | basename }}
+  tags: serviio
+
+- name: unpack the bundle
+  command: tar zxvf /tmp/{{ serviio_bundle_url | basename }}
+           chdir={{ serviio_install_dir }}
+           creates={{ serviio_install_dir }}/serviio-{{ serviio_version }}/bin/serviio.sh
+  tags: serviio
