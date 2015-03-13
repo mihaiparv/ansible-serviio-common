@@ -3,7 +3,7 @@
   apt_repository:
     repo: '{{ item }}'
     state: present
-    update_caches: yes
+    update_cache: yes
   with_flattened:
     - serviio_dependencies_repositories
   tags: serviio
