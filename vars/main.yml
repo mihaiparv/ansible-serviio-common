@@ -1,6 +1,6 @@
 ---
 serviio_bundle_url: 'http://download.serviio.org/releases/serviio-{{ serviio_version }}-linux.tar.gz'
 serviio_dependencies:
-  - 'openjdk-8-jdk=8u40~b22-2'
+  - 'openjdk-8-jdk'
 serviio_dependencies_repositories:
   - 'ppa:openjdk-r/ppa'
