@@ -15,5 +15,3 @@ galaxy_info:
         - all
   categories:
     - system
-  dependencies:
-    - ansible-ffmpeg-common
