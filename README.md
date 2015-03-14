@@ -19,7 +19,13 @@ Example Playbook
 Dependencies
 ------------
 
-ansible-ffmpeg-common
+The Serviio media server has the following dependencies:
+- Java 8
+- FFmpeg package (incl. libRTMP, libASS, libx264 and libmp3lame) for their OS distributions or, ideally, compile FFmpeg
+
+These dendencies can be installed using the following roles:
+- [ansible-openjdk-common](https://github.com/mihaiparv/ansible-openjdk-common)
+- [ansible-ffmpeg-common](https://github.com/mihaiparv/ansible-ffmpeg-common)
 
 License
 -------

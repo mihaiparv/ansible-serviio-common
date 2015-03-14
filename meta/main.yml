@@ -1,6 +1,4 @@
 ---
-dependencies:
-  - ansible-ffmpeg-common
 galaxy_info:
   author: Mihai Parv
   description: 
@@ -15,3 +13,4 @@ galaxy_info:
         - all
   categories:
     - system
+dependencies: []
