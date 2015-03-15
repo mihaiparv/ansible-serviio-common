@@ -20,5 +20,16 @@
     src: '/tmp/{{ serviio_bundle_url | basename }}'
     dest: '{{ serviio_install_dir }}'
     copy: no
-    creates: '{{ serviio_install_dir }}/serviio/bin/serviio.sh'
+    creates: '{{ serviio_install_dir }}/serviio-{{ serviio_version }}/bin/serviio.sh'
+  tags: serviio
+
+- name: symlink the current version
+  file:
+    src: '{{ serviio_install_dir }}/serviio-{{ serviio_version }}'
+    dest: '{{ serviio_install_dir }}/serviio'
+    state: link
+    owner: '{{ serviio_user }}'
+    group: '{{ serviio_user }}'
+    mode: 755
+  sudo: yes
   tags: serviio
